@@ -24,4 +24,3 @@ void mainmenu() {
         cout << "You selected 'Sorteio Manual'"<< endl;
     }
 }
-
