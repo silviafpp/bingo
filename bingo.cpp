@@ -70,18 +70,21 @@ int main() {
             if ((quantity == 75) || (quantity == 90) || (quantity == 100)) {
                 cout << "You entered one of the allowed numbers." << endl;
 
-                // Generate and display numbers
                 int chave[NUMEROS];
                 geraChave(chave, quantity);
 
                 for(int i = 0; i < quantity; i++){
                     cout << chave[i] << "\t";
-                    usleep(DELAY);
                     if((i + 1) % COLUNAS == 0){
                         cout << endl;
                     }
                 }
                 cout << endl;
+
+                // Clear the screen after displaying the numbers
+                cout << "Press Enter to continue...";
+                cin.ignore(); // Wait for Enter key press
+                clearScreen();
             } else {
                 cout << "Invalid input. The number must be 75, 90, or 100." << endl;
             }
@@ -91,10 +94,9 @@ int main() {
             cout << "You selected 'Generate Cards'" << endl;
         } else if (bingotype == 4) {
             cout << "Exiting..." << endl;
-            return 0;
+            break; // Exit the loop and end the program
         } else {
             cout << "Invalid Answer, try again or press '4' to quit" << endl;
-            break;
         }
 
     } while (true);
